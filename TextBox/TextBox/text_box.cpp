@@ -4,23 +4,21 @@
 static void
 debug(DebugLevel lvl, char* fn, char* error_msg) {
 	#ifndef DEBUG_NONE
+		fstream fs;
+		fs.open("debug.txt", std::fstream::out | std::fstream::app);
 		cout << fn << ": " << error_msg << endl;
 	#endif // DEBUG_NONE
 }
 
 static COORD
-GetConsoleCursorPosition(HANDLE h_out)
-{
+GetConsoleCursorPosition(HANDLE h_out) {
 	CONSOLE_SCREEN_BUFFER_INFO cbsi;
-	if (GetConsoleScreenBufferInfo(h_out, &cbsi))
-	{
+	if (GetConsoleScreenBufferInfo(h_out, &cbsi)) {
 		return cbsi.dwCursorPosition;
 	}
-	else
-	{
+	else {
 		// The function failed. Call GetLastError() for details.
-		COORD invalid = { 0, 0 };
-		return invalid;
+		return {0, 0};
 	}
 }
 
@@ -82,8 +80,6 @@ TextBox::handleInput() {
 	INPUT_RECORD record;
 	DWORD read_bytes, fdw_mode;
 	CONSOLE_SCREEN_BUFFER_INFO info;
-	fstream fs;
-	fs.open("test.txt", std::fstream::out | std::fstream::app );
 
 	fdw_mode = ENABLE_WINDOW_INPUT | ENABLE_EXTENDED_FLAGS;
 //	fdw_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT | ENABLE_EXTENDED_FLAGS;
@@ -124,10 +120,7 @@ TextBox::handleInput() {
 				}
 			}
 			break;
-	}
-
-	fs.close();
-	
+	}	
 }
 
 void
