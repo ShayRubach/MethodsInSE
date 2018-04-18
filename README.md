@@ -29,6 +29,7 @@ Setting the text box size, color and position on the screen can be done via main
 `#define SCREEN_POS_X (30)` </br>
 `#define SCREEN_POS_Y (10)` </br>
 
+To turn on debug output (to the local file 'debug.txt') just **comment out** this `#define DEBUG_NONE` in 'text_box.h' </br>
 
 #### Running via Visual Studio
 * git clone https://github.com/ShayRubach/MethodsInSE.git
