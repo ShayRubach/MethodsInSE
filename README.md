@@ -1,5 +1,6 @@
 Methods In Software Engineering
 ==
+
 **Contributers** <br/>
 [Shay Rubach](https://github.com/ShayRubach) <br/>
 [Idan Lazimi](https://github.com/idanlazimi)
@@ -16,7 +17,9 @@ Methods In Software Engineering
 ### Lesson #1 - Text Box
 
 Task Instruction can be found [here](https://goo.gl/j8laap)
+
 ![text_box](https://user-images.githubusercontent.com/21342315/38980954-760b4cd2-43be-11e8-9e9c-48df3106a535.JPG) <br/><br/>
+
 
 #### Running via Visual Studio
 * git clone https://github.com/ShayRubach/MethodsInSE.git
