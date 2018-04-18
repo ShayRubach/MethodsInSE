@@ -23,13 +23,12 @@ Task Instruction can be found [here](https://goo.gl/j8laap)
 #### Note <br/>
 Setting the text box size, color and position on the screen can be done via main.cpp :</br>
 
-`
-#define RGB (50|1|30)
-#define TB_HEIGHT	(4)
-#define TB_WIDTH	(25)
-#define SCREEN_POS_X (30)
-#define SCREEN_POS_Y (10)
-`
+`#define RGB (50|1|30)`
+`#define TB_HEIGHT	(4)`
+`#define TB_WIDTH	(25)`
+`#define SCREEN_POS_X (30)`
+`#define SCREEN_POS_Y (10)`
+
 
 #### Running via Visual Studio
 * git clone https://github.com/ShayRubach/MethodsInSE.git
