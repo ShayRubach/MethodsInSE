@@ -2,45 +2,59 @@
 #define TEXT_BOX_H
 #include <windows.h>
 #include <iostream>
+#include <fstream>
 
+#define BORDER_OFFSET (1)
 #define TOP_LEFT_CORNER '\xDA'
 #define TOP_RIGHT_CORNER '\xBF'
 #define BTM_LEFT_CORNER '\xC0'
 #define BTM_RIGHT_CORNER '\xD9'
 #define LINE_VERTICAL '\xB3'
 #define LINE_HORIZONTAL '\xC4'
+#define BACKSPACE '\x08'
 #define SPACE '\x20'
+#define CHAR_RESET '\x0'
+
+
+
+//comment to turn on debug:
+#define DEBUG_NONE
 
 using namespace std;
 
+typedef enum {
+	DBG_INFO = 0,
+	DBG_ERROR,
+}DebugLevel;
 
 typedef struct {
 	short x;
 	short y;
 }Dimension;
 
-class TextBox
-{
+class TextBox {
 private:
-	CONSOLE_SCREEN_BUFFER_INFO cursor;
-	COORD coord;
-	HANDLE in, out;
-	Dimension dim;
+	CONSOLE_SCREEN_BUFFER_INFO _cursor;
+	COORD _coord, _dim;
+	HANDLE _in, _out;
 
 public:
-	TextBox(Dimension,COORD);
+	TextBox(COORD,COORD);
 	~TextBox() {}
 
 	void setBackground(DWORD);
 	void draw();
 	void innerDraw(char, char, char);
 	void handleInput();
-	
-	COORD getCoord()			const { return coord; }
-	Dimension getDim()		const { return dim; }
-	HANDLE getInHandle()	const { return in; }
-	HANDLE getOutHandle()	const { return out; }
+
+
+	COORD getCoord()			const { return _coord; }
+	COORD getDim()				const { return _dim; }
+	HANDLE getInHandle()	const { return _in; }
+	HANDLE getOutHandle()	const { return _out; }
 
 };
+
+void printKickAssTitle();
 
 #endif // !TEXT_BOX_H

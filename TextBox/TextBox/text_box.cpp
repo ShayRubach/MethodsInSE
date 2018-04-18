@@ -1,31 +1,68 @@
 #include "text_box.h"
 
-TextBox::TextBox(Dimension _dim, COORD _coord) : dim(_dim), coord(_coord) {
-	in = GetStdHandle(STD_INPUT_HANDLE);
-	out = GetStdHandle(STD_OUTPUT_HANDLE);
+//TODO: make this function as util on a different module. make this receive ... parameters.
+static void
+debug(DebugLevel lvl, char* fn, char* error_msg) {
+	#ifndef DEBUG_NONE
+		cout << fn << ": " << error_msg << endl;
+	#endif // DEBUG_NONE
+}
+
+static COORD
+GetConsoleCursorPosition(HANDLE h_out)
+{
+	CONSOLE_SCREEN_BUFFER_INFO cbsi;
+	if (GetConsoleScreenBufferInfo(h_out, &cbsi))
+	{
+		return cbsi.dwCursorPosition;
+	}
+	else
+	{
+		// The function failed. Call GetLastError() for details.
+		COORD invalid = { 0, 0 };
+		return invalid;
+	}
+}
+
+TextBox::TextBox(COORD dim, COORD coord) : _dim(dim), _coord(coord) {
+	char* fn = __FUNCTION__;
+	debug(DBG_INFO, fn, "called.");
+
+	_in = GetStdHandle(STD_INPUT_HANDLE);
+	_out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	if (_in == INVALID_HANDLE_VALUE || _out == INVALID_HANDLE_VALUE) {
+		debug(DBG_ERROR, fn, "one of i/o handles is invalid.");
+	}
 }
 
 //draw the entire text box
 void 
 TextBox::draw() {
-	SetConsoleCursorPosition(out, coord);
+	char* fn = __FUNCTION__;
+	debug(DBG_INFO, fn, "called.");
+
+	SetConsoleCursorPosition(_out, _coord);
 
 	innerDraw(TOP_LEFT_CORNER, LINE_HORIZONTAL, TOP_RIGHT_CORNER);
-	SetConsoleCursorPosition(out, { coord.X,coord.Y + 1 });
+	SetConsoleCursorPosition(_out, { _coord.X,_coord.Y + 1 });
 
-	for (size_t i = 0; i < dim.y ; i++) {
+	for (size_t i = 0; i < _dim.Y ; i++) {
 		innerDraw(LINE_VERTICAL, SPACE, LINE_VERTICAL);
-		SetConsoleCursorPosition(out, { coord.X,coord.Y + 2 + ((short)i) });
+		SetConsoleCursorPosition(_out, { _coord.X,_coord.Y + 2 + ((short)i) });
 	}
 
 	innerDraw(BTM_LEFT_CORNER, LINE_HORIZONTAL, BTM_RIGHT_CORNER);
-	SetConsoleCursorPosition(out, { coord.X+1,coord.Y+1 });
+	SetConsoleCursorPosition(_out, { _coord.X+1,_coord.Y+1 });
 }
 
 // draw a single line by open,mid,close symbols:
 void
 TextBox::innerDraw(char open_sym, char mid_sym, char close_sym) {
-	for (size_t i = 0; i < dim.x - 1; i++) {
+	char* fn = __FUNCTION__;
+	debug(DBG_INFO, fn, "called.");
+
+	for (size_t i = 0; i < _dim.X - 1; i++) {
 		if (i == 0) {
 			cout << open_sym;
 		}
@@ -39,10 +76,71 @@ TextBox::innerDraw(char open_sym, char mid_sym, char close_sym) {
 // keep user input in borders:
 void
 TextBox::handleInput() {
+	char* fn = __FUNCTION__;
+	debug(DBG_INFO, fn, "called."); 
+	
+	INPUT_RECORD record;
+	DWORD read_bytes, fdw_mode;
+	CONSOLE_SCREEN_BUFFER_INFO info;
+	fstream fs;
+	fs.open("test.txt", std::fstream::out | std::fstream::app );
 
+	fdw_mode = ENABLE_WINDOW_INPUT | ENABLE_EXTENDED_FLAGS;
+//	fdw_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT | ENABLE_EXTENDED_FLAGS;
+
+	ReadConsoleInput(_in, &record, 1, &read_bytes);
+	SetConsoleMode(_in, fdw_mode);
+
+
+	switch (record.EventType) {
+		case MOUSE_EVENT:
+			//TODO: implement mouse event
+		case KEY_EVENT:
+			GetConsoleScreenBufferInfo(_in, &info);
+			if (record.Event.KeyEvent.bKeyDown) {
+				
+				if (record.Event.KeyEvent.uChar.AsciiChar == BACKSPACE) {
+					if (GetConsoleCursorPosition(_out).X - 1 == _coord.X) {
+						if (GetConsoleCursorPosition(_out).Y - 1 > _coord.Y) {
+							SetConsoleCursorPosition(_out, { _coord.X + _dim.X-BORDER_OFFSET ,GetConsoleCursorPosition(_out).Y - ((short)1) });
+						}
+						else {
+							break;
+						}
+					}
+					else {
+						cout << BACKSPACE << CHAR_RESET;
+						SetConsoleCursorPosition(_out, { GetConsoleCursorPosition(_out).X-1 ,GetConsoleCursorPosition(_out).Y});
+					}
+				}
+
+				else if (GetConsoleCursorPosition(_out).X+1 == _dim.X + _coord.X) {
+					if (GetConsoleCursorPosition(_out).Y < _dim.Y + _coord.Y) {
+						SetConsoleCursorPosition(_out, { _coord.X + 1,GetConsoleCursorPosition(_out).Y + ((short)1) });
+					}
+				}
+				else {
+					cout << record.Event.KeyEvent.uChar.AsciiChar;
+				}
+			}
+			break;
+	}
+
+	fs.close();
+	
 }
 
 void
 TextBox::setBackground(DWORD bg) {
-	SetConsoleTextAttribute(out, bg);
+	SetConsoleTextAttribute(_out, bg);
+}
+
+void
+printKickAssTitle() {
+	cout << "\t                                     _                      " << endl;
+	cout << "\t    _                       _       | |                     " << endl;
+	cout << "\t  _| |_  ______   _   _   _| |_     | |__    ___     _   _  " << endl;
+	cout << "\t (_   _) | ___ | ( \\ / ) (_   _)    |  _ \\  /  _ \\  ( \\ / ) " << endl;
+	cout << "\t   | |_  | ____|  ) X (    | |_     | |_) ) | |_| |  ) X (  " << endl;
+	cout << "\t    \\__) |_____) (_/ \\_)    \\__)    |____/  \\____ / (_/ \\_) " << endl;
 }
