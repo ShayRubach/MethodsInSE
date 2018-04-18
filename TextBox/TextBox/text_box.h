@@ -3,6 +3,14 @@
 #include <windows.h>
 #include <iostream>
 
+#define TOP_LEFT_CORNER '\xDA'
+#define TOP_RIGHT_CORNER '\xBF'
+#define BTM_LEFT_CORNER '\xC0'
+#define BTM_RIGHT_CORNER '\xD9'
+#define LINE_VERTICAL '\xB3'
+#define LINE_HORIZONTAL '\xC4'
+#define SPACE '\x20'
+
 using namespace std;
 
 
@@ -21,10 +29,12 @@ private:
 
 public:
 	TextBox(Dimension,COORD);
-	~TextBox();
+	~TextBox() {}
 
 	void setBackground(DWORD);
 	void draw();
+	void innerDraw(char, char, char);
+	void handleInput();
 	
 	COORD getCoord()			const { return coord; }
 	Dimension getDim()		const { return dim; }
