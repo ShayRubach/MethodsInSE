@@ -1,8 +1,8 @@
 #include "text_box.h"
 
-TextBox::TextBox(HANDLE _handle, COORD _coord) : handle(_handle),coord(_coord) {
-	//char* fn = "TextBox::TextBox";
-	//cout << fn << ": called." << endl;
+TextBox::TextBox(Dimension _dim, COORD _coord) : dim(_dim), coord(_coord) {
+	in = GetStdHandle(STD_INPUT_HANDLE);
+	out = GetStdHandle(STD_OUTPUT_HANDLE);
 }
 
 
@@ -11,8 +11,11 @@ TextBox::~TextBox() {
 
 void TextBox::draw() {
 
+	GetConsoleScreenBufferInfo(out, &cursor);
+	SetConsoleCursorPosition(out, coord);
+
 }
 
 void TextBox::setBackground(DWORD bg) {
-	SetConsoleTextAttribute(handle, bg);
+	SetConsoleTextAttribute(out, bg);
 }

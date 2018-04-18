@@ -1,17 +1,18 @@
 #include "text_box.h"
-#define BG BACKGROUND_BLUE | BACKGROUND_GREEN | BACKGROUND_RED
+
+#define RGB (50|1|30)
+#define TB_HEIGHT				(10)
+#define TB_WIDTH				(20)
+#define SCREEN_POS_X		(20)
+#define SCREEN_POS_Y		(10)
 
 int main() {
 	
-	HANDLE in = GetStdHandle(STD_INPUT_HANDLE);
-	HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
-	
-	CONSOLE_SCREEN_BUFFER_INFO cursor;
-	GetConsoleScreenBufferInfo(out, &cursor);
-	SetConsoleCursorPosition(out, { 10,20 });
-
-	TextBox text_box(in, { 10,15 });
-	text_box.setBackground(BG);
+	Dimension tb_border = {TB_HEIGHT, TB_WIDTH};
+	COORD tb_pos = {SCREEN_POS_X, SCREEN_POS_Y};
+									
+	TextBox text_box(tb_border,tb_pos);
+	text_box.setBackground(RGB);
 	text_box.draw();
 
 
