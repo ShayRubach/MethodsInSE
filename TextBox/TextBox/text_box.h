@@ -15,8 +15,6 @@
 #define SPACE '\x20'
 #define CHAR_RESET '\x0'
 
-
-
 //comment to turn on debug:
 #define DEBUG_NONE
 
@@ -26,11 +24,6 @@ typedef enum {
 	DBG_INFO = 0,
 	DBG_ERROR,
 }DebugLevel;
-
-typedef struct {
-	short x;
-	short y;
-}Dimension;
 
 class TextBox {
 private:
