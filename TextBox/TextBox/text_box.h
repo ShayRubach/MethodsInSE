@@ -40,12 +40,6 @@ public:
 	void innerDraw(char, char, char);
 	void handleInput();
 
-
-	COORD getCoord()			const { return _coord; }
-	COORD getDim()				const { return _dim; }
-	HANDLE getInHandle()	const { return _in; }
-	HANDLE getOutHandle()	const { return _out; }
-
 };
 
 void printKickAssTitle();
