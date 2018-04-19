@@ -2,11 +2,11 @@
 
 
 
-check_list::check_list()
+CheckList::CheckList()
 {
 }
 
 
-check_list::~check_list()
+CheckList::~CheckList()
 {
 }
