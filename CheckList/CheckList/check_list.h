@@ -1,4 +1,6 @@
-#pragma once
+#include <iostream>
+#include <fstream>
+
 class check_list
 {
 public:
