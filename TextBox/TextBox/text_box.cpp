@@ -1,7 +1,7 @@
 #include "text_box.h"
 
 //TODO: make this function as util on a different module. make this receive ... parameters.
-static void
+void
 debug(DebugLevel lvl, char* fn, char* error_msg) {
 	#ifndef DEBUG_NONE
 		fstream fs;

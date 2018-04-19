@@ -42,6 +42,7 @@ public:
 
 };
 
+void debug(DebugLevel, char*, char*);
 void printKickAssTitle();
 
 #endif // !TEXT_BOX_H
