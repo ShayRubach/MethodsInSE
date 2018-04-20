@@ -5,6 +5,12 @@
 #include <fstream>
 #include "text_box.h"
 
+#define SYM_BULLET "( )"
+#define SYM_MARKER "<---"
+#define SYM_CLEAR  "    "
+#define SYM_CHOICE 'X'
+#define PROMPT_OFFSET (36)
+
 
 class CheckList : public TextBox
 {
@@ -19,7 +25,9 @@ public:
 	void setItemsCount(const int count);
 	void handleInput();
 	void draw();
-	void drawList();
+	void innerDraw(char* open_sym, char* text, size_t line_num);
+	void chooseLine(size_t line_num);
+	void setLineMarker(char* symbol);
 
 };
 

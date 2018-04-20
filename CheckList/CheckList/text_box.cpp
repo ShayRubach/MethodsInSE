@@ -51,7 +51,7 @@ TextBox::draw() {
 	}
 
 	innerDraw(BTM_LEFT_CORNER, LINE_HORIZONTAL, BTM_RIGHT_CORNER);
-	SetConsoleCursorPosition(_out, { _coord.X+1,_coord.Y+1 });
+	SetConsoleCursorPosition(_out, { _coord.X+2,_coord.Y+1 });
 }
 
 // draw a single line by open,mid,close symbols:
@@ -71,7 +71,7 @@ TextBox::innerDraw(char open_sym, char mid_sym, char close_sym) {
 	cout << close_sym;
 }
 
-// keep user input in borders:
+// let the user choose between the bullets
 void
 TextBox::handleInput() {
 	char* fn = __FUNCTION__;
@@ -82,7 +82,6 @@ TextBox::handleInput() {
 	CONSOLE_SCREEN_BUFFER_INFO info;
 
 	fdw_mode = ENABLE_WINDOW_INPUT | ENABLE_EXTENDED_FLAGS;
-//	fdw_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT | ENABLE_EXTENDED_FLAGS;
 
 	ReadConsoleInput(_in, &record, 1, &read_bytes);
 	SetConsoleMode(_in, fdw_mode);
@@ -126,14 +125,4 @@ TextBox::handleInput() {
 void
 TextBox::setBackground(DWORD bg) {
 	SetConsoleTextAttribute(_out, bg);
-}
-
-void
-printKickAssTitle() {
-	cout << "\t                                     _                      " << endl;
-	cout << "\t    _                       _       | |                     " << endl;
-	cout << "\t  _| |_  ______   _   _   _| |_     | |__    ___     _   _  " << endl;
-	cout << "\t (_   _) | ___ | ( \\ / ) (_   _)    |  _ \\  /  _ \\  ( \\ / ) " << endl;
-	cout << "\t   | |_  | ____|  ) X (    | |_     | |_) ) | |_| |  ) X (  " << endl;
-	cout << "\t    \\__) |_____) (_/ \\_)    \\__)    |____/  \\____ / (_/ \\_) " << endl;
 }

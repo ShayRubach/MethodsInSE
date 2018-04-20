@@ -5,12 +5,12 @@
 #include <fstream>
 
 #define BORDER_OFFSET (1)
-#define TOP_LEFT_CORNER '\xDA'
-#define TOP_RIGHT_CORNER '\xBF'
-#define BTM_LEFT_CORNER '\xC0'
-#define BTM_RIGHT_CORNER '\xD9'
-#define LINE_VERTICAL '\xB3'
-#define LINE_HORIZONTAL '\xC4'
+#define TOP_LEFT_CORNER '\xC9'
+#define TOP_RIGHT_CORNER '\xBB'
+#define BTM_LEFT_CORNER '\xC8'
+#define BTM_RIGHT_CORNER '\xBC'
+#define LINE_VERTICAL '\xBA'
+#define LINE_HORIZONTAL '\xCD'
 #define BACKSPACE '\x08'
 #define SPACE '\x20'
 #define CHAR_RESET '\x0'
