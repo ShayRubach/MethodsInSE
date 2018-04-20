@@ -18,7 +18,7 @@ Methods In Software Engineering
 2. Create a matching URL Diagram (Use Case, Deployment, Activity)
 3. Develope two small applications: <br/>
 	3.1. App #1 - Text Box <br/>
-	3.2. App #2 - Check List <br/>
+	3.2. App #2 - Check List <br/> 
 
 	
 ### App #1 - Text Box
