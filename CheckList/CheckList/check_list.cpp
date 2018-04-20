@@ -3,19 +3,23 @@
 
 CheckList::CheckList(const int count, COORD pos, COORD dim) : TextBox(pos, dim) {
 	setItemsCount(count);
+	_choices.resize(_items_cnt);
 }
+
+CheckList::~CheckList() {}
 
 void
 CheckList::setItemsCount(const int count) {
 	char* fn = __FUNCTION__;
 	debug(DBG_INFO, fn, "called.");
 
+	_items_cnt = count > _dim.Y ? _dim.Y : count ;
 }
 
 void
 CheckList::draw() {
 	TextBox::draw();
-	for (size_t i = 0; i < _dim.Y; i++) {
+	for (size_t i = 0; i < _items_cnt; i++) {
 		innerDraw(SYM_BULLET, "Option no. ", i);
 		SetConsoleCursorPosition(_out, { _coord.X + 2,_coord.Y + 2 + ((short)i) });
 	}
@@ -35,7 +39,22 @@ CheckList::innerDraw(char* open_sym, char* text, size_t line_num) {
 }
 
 void
-CheckList::chooseLine(size_t line_num) {
+CheckList::chooseLine() {
+	//update bitset:
+	int line_num = GetConsoleCursorPosition(_out).Y - _dim.Y - 1;
+	_choices.at(line_num) = _choices.at(line_num) ^ 1;
+
+	SetConsoleCursorPosition(_out, { _coord.X + SYM_CHOICE_OFFSET, GetConsoleCursorPosition(_out).Y });
+
+	if (_choices.at(line_num)) {
+		cout << SYM_CHOICE;
+	}
+	else {
+		cout << SYM_SPACE;
+	}
+	
+
+
 
 }
 
@@ -74,11 +93,11 @@ CheckList::handleInput() {
 			if ((GetKeyState(VK_UP) & 0x8000 ) && curr_pos.Y > _coord.Y+1) {
 				SetConsoleCursorPosition(_out, { curr_pos.X, curr_pos.Y - 1 });
 			}
-			else if ((GetKeyState(VK_DOWN) & 0x8000) && curr_pos.Y < _coord.Y + _dim.Y) {
+			else if ((GetKeyState(VK_DOWN) & 0x8000) && curr_pos.Y < _coord.Y + _items_cnt) {
 				SetConsoleCursorPosition(_out, { curr_pos.X, curr_pos.Y + 1 });
 			} 
 			else if (GetKeyState(VK_SPACE) & 0x8000) {
-				chooseLine(SYM_CHOICE);
+				chooseLine();
 			}
 
 			setLineMarker(SYM_MARKER);
