@@ -16,9 +16,9 @@ Methods In Software Engineering
 
 1. Create a Table of Demands [for this Customer Story](http://online.shenkar.ac.il/pluginfile.php/288299/mod_assign/introattachment/0/%D7%A1%D7%99%D7%A4%D7%95%D7%A8%20%D7%9C%D7%A7%D7%95%D7%97%20%D7%9E%D7%A4%D7%95%D7%A8%D7%98.pdf?forcedownload=1)
 2. Create a matching URL Diagram (Use Case, Deployment, Activity)
-3. Develope two small applications:
-	App #1 - Text Box
-	App #2 - Check List
+3. Develope two small applications: <br/>
+	3.1. App #1 - Text Box <br/>
+	3.2. App #2 - Check List <br/>
 
 	
 ### App #1 - Text Box
