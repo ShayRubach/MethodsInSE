@@ -46,7 +46,17 @@ TODO
 ### Lesson #2 - Check Box
 
 Task Instruction can be found [here](https://goo.gl/j8laap)
+#### How to use the app? <br/>
+- Move with ↑ ↓ only to navigate between items
+- Use Spacebar to check/uncheck an item from the list
 
+![capture2](https://user-images.githubusercontent.com/21342315/39076730-7e3696ce-44fd-11e8-9ff0-d600a94fd08b.JPG)
+
+#### Note <br/>
+Like in the first task, setting the check list dimensions, how many items will the list hold, color and position on the screen can be done via main.cpp :</br>
+
+Notice the unique declaration in this project. The items count will be equal to the Y dimension at max.
+`#define ITEMS_COUNT (8)`
 
 
 #### Running via Visual Studio
