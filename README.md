@@ -43,7 +43,7 @@ TODO
 
 ---
 
-### Lesson #2 - Check Box
+### Lesson #2 - Check List
 
 Task Instruction can be found [here](https://goo.gl/j8laap)
 #### How to use the app? <br/>
