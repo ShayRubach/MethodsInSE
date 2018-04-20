@@ -56,7 +56,9 @@ Task Instruction can be found [here](https://goo.gl/j8laap)
 Like in the first task, setting the check list dimensions, how many items will the list hold, color and position on the screen can be done via main.cpp :</br>
 
 Notice the unique declaration in this project. The items count will be equal to the Y dimension at max.</br>
-`#define ITEMS_COUNT (8)`
+```cpp
+#define ITEMS_COUNT (8)
+```
 
 
 #### Running via Visual Studio
