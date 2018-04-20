@@ -15,6 +15,7 @@ int main() {
 
 	CheckList check_list(ITEMS_COUNT, cl_dim, cl_pos);
 	check_list.setBackground(APP_RGB);
+	check_list.printKickAssTitle();
 	check_list.draw();
 
 	while (true) {

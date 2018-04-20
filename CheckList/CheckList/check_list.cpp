@@ -1,7 +1,10 @@
-#include "check_list.h"
+﻿#include "check_list.h"
 
 
 CheckList::CheckList(const int count, COORD pos, COORD dim) : TextBox(pos, dim) {
+	char* fn = __FUNCTION__;
+	debug(DBG_INFO, fn, "called."); 
+	
 	setItemsCount(count);
 	_choices.resize(_items_cnt);
 }
@@ -40,6 +43,9 @@ CheckList::innerDraw(char* open_sym, char* text, size_t line_num) {
 
 void
 CheckList::chooseLine() {
+	char* fn = __FUNCTION__;
+	debug(DBG_INFO, fn, "called.");
+
 	//update bitset:
 	int line_num = GetConsoleCursorPosition(_out).Y - _dim.Y - 1;
 	_choices.at(line_num) = _choices.at(line_num) ^ 1;
@@ -52,10 +58,6 @@ CheckList::chooseLine() {
 	else {
 		cout << SYM_SPACE;
 	}
-	
-
-
-
 }
 
 void
@@ -89,7 +91,7 @@ CheckList::handleInput() {
 			//clean the symbol marker (the arrow):
 			setLineMarker(SYM_CLEAR);
 
-			//if the up arrow key has been pressed (keep in borders):
+			//if the up/down/space key has been pressed (keep in borders):
 			if ((GetKeyState(VK_UP) & 0x8000 ) && curr_pos.Y > _coord.Y+1) {
 				SetConsoleCursorPosition(_out, { curr_pos.X, curr_pos.Y - 1 });
 			}
@@ -99,17 +101,34 @@ CheckList::handleInput() {
 			else if (GetKeyState(VK_SPACE) & 0x8000) {
 				chooseLine();
 			}
-
 			setLineMarker(SYM_MARKER);
 		}
-
 		break;
 	}
 }
 
 void
 CheckList::setLineMarker(char* symbol) {
+	char* fn = __FUNCTION__;
+	debug(DBG_INFO, fn, "called.");
+
 	SetConsoleCursorPosition(_out, { _coord.X + _dim.X-PROMPT_OFFSET,GetConsoleCursorPosition(_out).Y });
 	cout << symbol;
 	
+}
+
+void
+CheckList::printKickAssTitle() {
+	char* fn = __FUNCTION__;
+	debug(DBG_INFO, fn, "called.");
+
+#ifdef PRINT_TITLE
+	//			-------------c-----------     ------------h--------------   ------------e---------------  --------------c------------   ---------------k-----------         ------------------L----------    ---i---		-----------s--------------   --------------t-------------
+	SetConsoleCursorPosition(_out, { 24,2 });
+	cout << '\xDA' << '\xC4' << '\xBF' << '\xC2' << ' '    << '\xC2' << '\xDA' << '\xC4' << '\xBF' << '\xDA' << '\xC4' << '\xBF' << '\xC2' << '\xDA' << '\xC4' << "   " << '\xC2' << ' '    << ' '		<< '\xC2' << '\xDA' << '\xC4' << '\xBF' << '\xDA' << '\xC2' << '\xBF';
+	SetConsoleCursorPosition(_out, { 24,3 });
+	cout << '\xB3' << ' '    << ' '    << '\xC3' << '\xC4' << '\xB4' << '\xC3' << '\xB4' << ' '    << '\xB3' << ' '    << ' '    << '\xC3' << '\xC1' << '\xBF' << "   " << '\xC3' << ' '    << ' '    << '\xB3' << '\xC0' << '\xC4' << '\xBF' << ' '    << '\xB3' << ' '   ;
+	SetConsoleCursorPosition(_out, { 24,4 });
+	cout << '\xC0' << '\xC4' << '\xD9' << '\xC1' << ' '    << '\xC1' << '\xC0' << '\xC4' << '\xD9' << '\xC0' << '\xC4' << '\xD9' << '\xC1' << ' '    << '\xC1' << "   " << '\xC1' << '\xC4' << '\xD9' << '\xC1' << '\xC0' << '\xC4' << '\xD9' << ' '    << '\xC1' << ' '	 ;
+#endif
 }

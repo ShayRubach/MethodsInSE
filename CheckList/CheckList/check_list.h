@@ -6,6 +6,9 @@
 #include <vector>
 #include "text_box.h"
 
+//comment out to remove title print
+#define PRINT_TITLE (1)
+
 #define SYM_BULLET "( )"
 #define SYM_MARKER "<---"
 #define SYM_SPACE ' '
@@ -32,7 +35,7 @@ public:
 	void innerDraw(char* open_sym, char* text, size_t line_num);
 	void chooseLine();
 	void setLineMarker(char* symbol);
-
+	void printKickAssTitle();
 };
 
 #endif // !CHECK_LIST_H
