@@ -26,13 +26,13 @@ typedef enum {
 }DebugLevel;
 
 class TextBox {
-private:
+protected:
 	CONSOLE_SCREEN_BUFFER_INFO _cursor;
 	COORD _coord, _dim;
 	HANDLE _in, _out;
 
 public:
-	TextBox(COORD,COORD);
+	TextBox(COORD coord = {0,0}, COORD dim = { 0,0 });
 	~TextBox() {}
 
 	void setBackground(DWORD);

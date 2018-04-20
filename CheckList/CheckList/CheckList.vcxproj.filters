@@ -21,9 +21,15 @@
     <ClCompile Include="check_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="text_box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="check_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text_box.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,0 +1,12 @@
+﻿  main.cpp
+e:\visualstudioprojects\methodsinse\textbox\textbox\main.cpp(3): warning C4005: 'RGB': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\wingdi.h(1846): note: see previous definition of 'RGB'
+  Generating Code...
+  Compiling...
+  text_box.cpp
+e:\visualstudioprojects\methodsinse\textbox\textbox\text_box.cpp(48): warning C4018: '<': signed/unsigned mismatch
+e:\visualstudioprojects\methodsinse\textbox\textbox\text_box.cpp(63): warning C4018: '<': signed/unsigned mismatch
+e:\visualstudioprojects\methodsinse\textbox\textbox\text_box.cpp(128): warning C4244: 'argument': conversion from 'DWORD' to 'WORD', possible loss of data
+  Generating Code...
+  TextBox.vcxproj -> E:\VisualStudioProjects\MethodsInSE\TextBox\Debug\TextBox.exe
+  TextBox.vcxproj -> E:\VisualStudioProjects\MethodsInSE\TextBox\Debug\TextBox.pdb (Partial PDB)

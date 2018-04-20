@@ -84,6 +84,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -115,9 +116,11 @@
   <ItemGroup>
     <ClCompile Include="check_list.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="text_box.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="check_list.h" />
+    <ClInclude Include="text_box.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
