@@ -1,4 +1,4 @@
-
+  
 Methods In Software Engineering
 ==
 
@@ -6,20 +6,33 @@ Methods In Software Engineering
 [Shay Rubach](https://github.com/ShayRubach) <br/>
 [Idan Lazimi](https://github.com/idanlazimi)
 
-## Useful links
+## Useful links & tools
 - [Microsoft Console API](https://docs.microsoft.com/en-us/windows/console/console-reference)
 - [Automatic ASCII Generator](http://patorjk.com/software/taag/#p=display&h=0&f=Broadway&t=Ascii%20lover)
 - [StackEdit.io - Edit README online](https://stackedit.io/app#)
+
+### Tools
+- Visual Studio Community Edition 2015
+- Windows.h library (Win API)
+<br/>_**Diclaimer:**_ <br/>all of the code was developed on and for a windows OS environment. <br/> Using this on a Linux/Mac/Other OS will require adapters such as [Wine](https://www.winehq.org/) etc and are currently not supported on our instructions.
 ## Workshop Lessons Breakdown:
 
 **The Rippin You Off With a Smile Bank - Loans & Mortgages**  ![image](https://user-images.githubusercontent.com/21342315/39082573-c637364c-4555-11e8-8c27-24e43bc943ff.png) <br/>
 
 1. Create a Table of Demands [for this Customer Story](http://online.shenkar.ac.il/pluginfile.php/288299/mod_assign/introattachment/0/%D7%A1%D7%99%D7%A4%D7%95%D7%A8%20%D7%9C%D7%A7%D7%95%D7%97%20%D7%9E%D7%A4%D7%95%D7%A8%D7%98.pdf?forcedownload=1)
-2. Create a matching URL Diagram (Use Case, Deployment, Activity)
+2. Create matching UML Diagrams (Use Case, Deployment, Activity)
 3. Develope two small applications: <br/>
 	3.1. App #1 - Text Box <br/>
 	3.2. App #2 - Check List <br/> 
 
+### Table of Demands
+[See table here]()
+
+### UML Diagrams
+[Organization Level UC Diagram](https://www.scribd.com/document/377635445/MISE-Org-Lvl-Uc-Diag)
+[Deployment Model]() 
+[System Level UC Diagram](https://www.scribd.com/document/377635412/MISE-Sys-Lvl-Uc-Diag)
+[ACtivity Diagram]() 
 	
 ### App #1 - Text Box
 
