@@ -30,9 +30,9 @@ Methods In Software Engineering
 See table [here](https://drive.google.com/file/d/1UrFaYvd2ghG_SokdfR7_1LvLp0484cvb/view?ts=5ad75337) or alternatively [here](https://www.scribd.com/document/377661202/Demand-Table)
 
 ### UML Diagrams
-[Organization Level UC Diagram](https://www.scribd.com/document/377635445/MISE-Org-Lvl-Uc-Diag)
-[Deployment Diagram](https://ibb.co/mi4bBx) 
-[System Level UC Diagram](https://www.scribd.com/document/377635412/MISE-Sys-Lvl-Uc-Diag)
+[Organization Level UC Diagram](https://www.scribd.com/document/377635445/MISE-Org-Lvl-Uc-Diag) <br/>
+[Deployment Diagram](https://ibb.co/mi4bBx) <br/>
+[System Level UC Diagram](https://www.scribd.com/document/377635412/MISE-Sys-Lvl-Uc-Diag) <br/>
 [Activity Diagram](https://ibb.co/kDaNjH) 
 	
 ### App #1 - Text Box
