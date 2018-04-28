@@ -1,3 +1,4 @@
+
   
 Methods In Software Engineering
 ==
@@ -26,13 +27,13 @@ Methods In Software Engineering
 	3.2. App #2 - Check List <br/> 
 
 ### Table of Demands
-[See table here](https://drive.google.com/file/d/1UrFaYvd2ghG_SokdfR7_1LvLp0484cvb/view?ts=5ad75337)
+See table [here](https://drive.google.com/file/d/1UrFaYvd2ghG_SokdfR7_1LvLp0484cvb/view?ts=5ad75337) or alternatively [here](https://www.scribd.com/document/377661202/Demand-Table)
 
 ### UML Diagrams
 [Organization Level UC Diagram](https://www.scribd.com/document/377635445/MISE-Org-Lvl-Uc-Diag)
-[Deployment Model]() 
+[Deployment Diagram](https://ibb.co/mi4bBx) 
 [System Level UC Diagram](https://www.scribd.com/document/377635412/MISE-Sys-Lvl-Uc-Diag)
-[ACtivity Diagram]() 
+[Activity Diagram](https://ibb.co/kDaNjH) 
 	
 ### App #1 - Text Box
 
