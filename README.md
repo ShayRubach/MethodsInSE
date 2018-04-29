@@ -5,7 +5,8 @@ Methods In Software Engineering
 
 **Contributers** <br/>
 [Shay Rubach](https://github.com/ShayRubach) <br/>
-[Idan Lazimi](https://github.com/idanlazimi)
+[Idan Lazimi](https://github.com/idanlazimi) <br/>
+[Alon Golan](https://github.com/alongolan1991)
 
 ## Useful links & tools
 - [Microsoft Console API](https://docs.microsoft.com/en-us/windows/console/console-reference)
