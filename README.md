@@ -12,11 +12,12 @@ Methods In Software Engineering
 - [Microsoft Console API](https://docs.microsoft.com/en-us/windows/console/console-reference)
 - [Automatic ASCII Generator](http://patorjk.com/software/taag/#p=display&h=0&f=Broadway&t=Ascii%20lover)
 - [StackEdit.io - Edit README online](https://stackedit.io/app#)
+- [UML Notation Summery](http://umich.edu/~eecs381/handouts/UMLNotationSummary.pdf)
 
 ### Tools
 - Visual Studio Community Edition 2015
 - Windows.h library (Win API)
-<br/>_**Diclaimer:**_ <br/>all of the code was developed on and for a windows OS environment. <br/> Using this on a Linux/Mac/Other OS will require adapters such as [Wine](https://www.winehq.org/) etc and are currently not supported on our instructions.
+<br/>_**Disclaimer:**_ <br/>all of the code was developed on and for a windows OS environment. <br/> Using this on a Linux/Mac/Other OS will require adapters such as [Wine](https://www.winehq.org/) etc and are currently not supported on our instructions.
 ## Workshop Lessons Breakdown:
 
 **The Rippin You Off With a Smile Bank - Loans & Mortgages**  ![image](https://user-images.githubusercontent.com/21342315/39082573-c637364c-4555-11e8-8c27-24e43bc943ff.png) <br/>
@@ -27,6 +28,8 @@ Methods In Software Engineering
 	3.1. App #1 - Text Box <br/>
 	3.2. App #2 - Check List <br/> 
 
+4. Create a detailed Class Diagram following [this document](https://www.scribd.com/document/378911321/%D7%9E%D7%A4%D7%A8%D7%98-%D7%A4%D7%A7%D7%93%D7%99%D7%9D)  ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png) [NEW!] ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png)
+
 ### Table of Demands
 See table [here](https://drive.google.com/file/d/1UrFaYvd2ghG_SokdfR7_1LvLp0484cvb/view?ts=5ad75337) or alternatively [here](https://www.scribd.com/document/377661202/Demand-Table)
 
@@ -34,11 +37,13 @@ See table [here](https://drive.google.com/file/d/1UrFaYvd2ghG_SokdfR7_1LvLp0484c
 [Organization Level UC Diagram](https://www.scribd.com/document/377635445/MISE-Org-Lvl-Uc-Diag) <br/>
 [Deployment Diagram](https://ibb.co/mi4bBx) <br/>
 [System Level UC Diagram](https://www.scribd.com/document/377635412/MISE-Sys-Lvl-Uc-Diag) <br/>
-[Activity Diagram](https://ibb.co/kDaNjH) 
+[Activity Diagram](https://ibb.co/kDaNjH) <br/>
+[Class Diagram including Design Patterns](https://www.scribd.com/document/378958394/Methods-in-Software-Engineers-Class-Diagram-With-Design-Patterns) ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png) [NEW!] ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png)
+
 	
 ### App #1 - Text Box
 
-Detailed instruction can be found [here](https://goo.gl/j8laap)
+Detailed instruction can be found [here](https://www.youtube.com/watch?v=d5IrqkTYfL4)
 
 ![text_box](https://user-images.githubusercontent.com/21342315/38980954-760b4cd2-43be-11e8-9e9c-48df3106a535.JPG) <br/><br/>
 
@@ -72,7 +77,7 @@ TODO
 
 ### App #2 - Check List
 
-Detailed instruction can be found [here](https://goo.gl/j8laap)
+Detailed instruction can be found [here](https://www.youtube.com/watch?v=d5IrqkTYfL4)
 #### How to use the app? <br/>
 - Move with ↑ ↓ only to navigate between items
 - Use Spacebar to check/uncheck an item from the list
