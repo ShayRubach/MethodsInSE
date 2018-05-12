@@ -41,7 +41,7 @@ See table [here](https://drive.google.com/file/d/1UrFaYvd2ghG_SokdfR7_1LvLp0484c
 [Deployment Diagram](https://ibb.co/mi4bBx) <br/>
 [System Level UC Diagram](https://www.scribd.com/document/377635412/MISE-Sys-Lvl-Uc-Diag) <br/>
 [Activity Diagram](https://ibb.co/kDaNjH) <br/>
-[Class Diagram including Design Patterns](https://www.scribd.com/document/378958394/Methods-in-Software-Engineers-Class-Diagram-With-Design-Patterns) ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png) [NEW!] ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png)
+[Class Diagram including Design Patterns](https://www.scribd.com/document/379009877/MISE-Class-Diagram-With-Dp) ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png) [NEW!] ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png)
 
 	
 ### App #1 - Text Box
