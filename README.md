@@ -1,4 +1,5 @@
 
+
   
 Methods In Software Engineering
 ==
@@ -22,14 +23,16 @@ Methods In Software Engineering
 
 **The Rippin You Off With a Smile Bank - Loans & Mortgages**  ![image](https://user-images.githubusercontent.com/21342315/39082573-c637364c-4555-11e8-8c27-24e43bc943ff.png) <br/>
 
+The final project of this course is to develop an API (in our case, a [C++ Static Library]()) which will be provided to the Bank's developers & employees in order to be able to dynamically create Psuedo Graphical forms for their organization's system. This project will be broken down to ***sub tasks*** and embrace the [Agile Methodology](https://en.wikipedia.org/wiki/Agile_software_development), commonly used in software development.<br>***Sub tasks***: 
 1. Create a Table of Demands [for this Customer Story](http://online.shenkar.ac.il/pluginfile.php/288299/mod_assign/introattachment/0/%D7%A1%D7%99%D7%A4%D7%95%D7%A8%20%D7%9C%D7%A7%D7%95%D7%97%20%D7%9E%D7%A4%D7%95%D7%A8%D7%98.pdf?forcedownload=1)
 2. Create matching UML Diagrams (Use Case, Deployment, Activity)
 3. Develope two small applications: <br/>
 	3.1. App #1 - Text Box <br/>
 	3.2. App #2 - Check List <br/> 
 
-4. Create a detailed Class Diagram following [this document](https://www.scribd.com/document/378911321/%D7%9E%D7%A4%D7%A8%D7%98-%D7%A4%D7%A7%D7%93%D7%99%D7%9D)  ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png) [NEW!] ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png)
-
+4. Create a detailed Class Diagram following [this document](https://www.scribd.com/document/378911321/%D7%9E%D7%A4%D7%A8%D7%98-%D7%A4%D7%A7%D7%93%D7%99%D7%9D)  using 2-3 [Design Patterns](https://sourcemaking.com/design_patterns) ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png) [NEW!] ![fire](https://user-images.githubusercontent.com/21342315/39946683-684328a0-556f-11e8-92ee-7a42759d3933.png)
+5. Prepare a work plan for the project, from start to finish. Use [Gantt Charts](http://www.gantt.com/) to design your work plan. You can use [MSProject](https://products.office.com/en/project/project-and-portfolio-management-software?tab=tabs-1) or any other project management software for your team ([here's a free one]([http://](http://www.ganttproject.biz/dl/2.7/win)[www.ganttproject.biz/dl/2.7/win](http://www.ganttproject.biz/dl/2.7/win))).<br>Detailed instruction can be found [here](http://online.shenkar.ac.il/mod/assign/view.php?id=107138)
+6. Develop a example of a program using your own awsome API, demonstrating all of the behavior you were required to achieve on the early [Customer Story Form](http://online.shenkar.ac.il/pluginfile.php/288299/mod_assign/introattachment/0/%D7%A1%D7%99%D7%A4%D7%95%D7%A8%20%D7%9C%D7%A7%D7%95%D7%97%20%D7%9E%D7%A4%D7%95%D7%A8%D7%98.pdf?forcedownload=1).
 ### Table of Demands
 See table [here](https://drive.google.com/file/d/1UrFaYvd2ghG_SokdfR7_1LvLp0484cvb/view?ts=5ad75337) or alternatively [here](https://www.scribd.com/document/377661202/Demand-Table)
 
