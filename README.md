@@ -47,11 +47,14 @@ Detailed instruction can be found [here](https://www.youtube.com/watch?v=d5IrqkT
 #### Note <br/>
 Setting up the text box size, color and position on the screen can be done via main.cpp :</br>
 ```cpp#define RGB (50|1|30)
-#define TB_HEIGHT	(4)#define TB_WIDTH	(25)
-#define SCREEN_POS_X (30)#define SCREEN_POS_Y (10)
+#define TB_HEIGHT	(4)
+#define TB_WIDTH	(25)
+#define SCREEN_POS_X (30)
+#define SCREEN_POS_Y (10)
 ```
 To turn on debug output (to the local file 'debug.txt') just **comment out** this 
-```cpp #define DEBUG_NONE
+```cpp 
+#define DEBUG_NONE
 ``` 
 in 'text_box.h' </br>
 #### Running via Visual Studio
