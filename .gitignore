@@ -1,1 +1,4 @@
 
+*.db
+*.ipch
+*.opendb
