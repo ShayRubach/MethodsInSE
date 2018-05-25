@@ -37,10 +37,6 @@ PgComponentsFactory::create(const enum PgProduct& product) {
 	case TEXT_BOX:
 		return new PgTextBox();
 		break;
-
-
-
-
 	default:
 		break;
 	}

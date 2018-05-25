@@ -12,9 +12,6 @@
 #include "pg_radiobox.h"
 #include "pg_combobox.h"
 
-using std::string;
-
-
 typedef enum {
 	LABEL,
 	BUTTON,
@@ -30,7 +27,7 @@ typedef enum {
 class PgComponentsFactory final
 {
 private:
-	//prohibiting copying and instanciating with c++11 delete modifier.
+	//prohibiting copying and instanciating with c++11 delete modifier :)
 	PgComponentsFactory() {}
 	PgComponentsFactory(const PgComponentsFactory&) = delete;
 	PgComponentsFactory& operator=(const PgComponentsFactory&) = delete;
