@@ -24,18 +24,12 @@
     <ClCompile Include="PgComposite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PgUtils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PgComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PgComposite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PgUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -116,12 +116,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PgComponent.cpp" />
     <ClCompile Include="PgComposite.cpp" />
-    <ClCompile Include="PgUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PgComponent.h" />
     <ClInclude Include="PgComposite.h" />
-    <ClInclude Include="PgUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

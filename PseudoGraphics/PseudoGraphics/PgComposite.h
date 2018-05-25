@@ -61,7 +61,5 @@ public:
 	
 };
 
-void debug(PgDebugLevel lvl, const char *arg, ...);
-
 
 #endif // !PG_COMPOSITE_H
