@@ -24,12 +24,54 @@
     <ClCompile Include="pg_composite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pg_components_factory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pg_label.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pg_textbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pg_numericbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pg_panel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pg_button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mouse_listener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pg_component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="pg_composite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_components_factory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_label.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_textbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_numericbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_panell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse_listener.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

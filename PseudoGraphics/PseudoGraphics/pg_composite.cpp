@@ -22,7 +22,7 @@ dbgToString(PgDebugLevel lvl) {
 	}
 }
 
-void
+static void
 debug(PgDebugLevel lvl, const char *format, ...) {
 
 	cout << "[" << dbgToString(lvl) << "] ";
@@ -32,6 +32,7 @@ debug(PgDebugLevel lvl, const char *format, ...) {
 	vprintf(format, args);
 	va_end(args);
 }
+
 void
 PgComposite::add(PgComponent* new_child) {
 	const char* fn = __FUNCTION__;
@@ -59,11 +60,70 @@ PgComposite::getChild(const int pos) {
 	if (isValidPos(children.size(), pos)) {
 		return children.at(pos);
 	}
-
 	return NULL;
 }
 
 vector<PgComponent*> 
 PgComposite::getChildren() {
 	return children;
+}
+
+COORD 
+PgComposite::getDimensions() {
+	return _dim;
+}
+
+COORD 
+PgComposite::getBasePosition() {
+	return _base_pos;
+}
+
+PgFrameType 
+PgComposite::getFrameType() {
+	return _frame_type;
+}
+
+bool
+PgComposite::isTabbable() {
+	return _tabbable;
+}
+
+bool
+PgComposite::isClickable() {
+	return _clickable;
+}
+
+bool
+PgComposite::isVisible() {
+	return _visible;
+}
+
+void 
+PgComposite::setTabbable(bool tabbable) {
+	_tabbable = tabbable;
+}
+
+void
+PgComposite::setVisible(bool visible) {
+	_visible = visible;
+}
+
+void
+PgComposite::setClickable(bool clickable) {
+	_clickable = clickable;
+}
+
+void
+PgComposite::setFrameType(PgFrameType frame_type) {
+	_frame_type = frame_type;
+}
+
+void
+PgComposite::setDimensions(COORD dim) {
+	_dim = dim;
+}
+
+void
+PgComposite::setBasePosition(COORD pos) {
+	_base_pos = pos;
 }

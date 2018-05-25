@@ -37,8 +37,7 @@ private:
 
 
 public:
-	PgComposite();
-	~PgComposite();
+	virtual ~PgComposite() {}
 
 	virtual void draw() = 0;
 	virtual void innerDraw() {}
@@ -52,7 +51,8 @@ public:
 	PgFrameType getFrameType();
 	bool isTabbable();
 	bool isClickable();
-	bool isVisible();	void setTabbable(bool tabbable);
+	bool isVisible();	
+	void setTabbable(bool tabbable);
 	void setVisible(bool visible);
 	void setClickable(bool clickable);
 	void setFrameType(PgFrameType frame_type);
