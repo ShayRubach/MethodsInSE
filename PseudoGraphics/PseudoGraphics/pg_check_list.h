@@ -11,5 +11,8 @@ public:
 	bool onClick() { return true; }
 	bool onHover() { return true; }
 	void chooseLine() {}
+
+	string& getSelectedItem();							//override
+	vector<bool>& getSelectedPositions();		//new method
 };
 
