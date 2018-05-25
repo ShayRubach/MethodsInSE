@@ -114,12 +114,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="PgComponent.cpp" />
-    <ClCompile Include="PgComposite.cpp" />
+    <ClCompile Include="pg_component.cpp" />
+    <ClCompile Include="pg_composite.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PgComponent.h" />
-    <ClInclude Include="PgComposite.h" />
+    <ClInclude Include="pg_component.h" />
+    <ClInclude Include="pg_composite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

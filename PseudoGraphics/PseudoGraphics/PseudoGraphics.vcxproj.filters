@@ -18,18 +18,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PgComponent.cpp">
+    <ClCompile Include="pg_component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PgComposite.cpp">
+    <ClCompile Include="pg_composite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PgComponent.h">
+    <ClInclude Include="pg_component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PgComposite.h">
+    <ClInclude Include="pg_composite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

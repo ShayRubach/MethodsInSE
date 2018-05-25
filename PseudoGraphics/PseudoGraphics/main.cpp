@@ -1,4 +1,4 @@
-#include "PgComposite.h"
+#include "pg_composite.h"
 
 #define APP_RGB (90|10|30)
 #define ITEMS_COUNT (8)
