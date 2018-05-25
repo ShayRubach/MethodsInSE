@@ -10,6 +10,8 @@ class PgNumericBox : public PgComposite
 public:
 	PgNumericBox();
 	~PgNumericBox();
+
+	void draw() {}
 };
 
 #endif //PG_NUMERICBOX_H

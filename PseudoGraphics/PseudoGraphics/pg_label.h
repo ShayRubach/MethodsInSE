@@ -6,8 +6,11 @@
 class PgLabel : public PgComposite
 {
 public:
+	
 	PgLabel();
 	~PgLabel();
+
+	void draw() {}
 };
 
 

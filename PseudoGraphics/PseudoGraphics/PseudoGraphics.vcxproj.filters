@@ -45,6 +45,24 @@
     <ClCompile Include="mouse_listener.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="keyboard_listener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pg_list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pg_check_list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pg_radiobox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pg_combobox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pg_messagebox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pg_component.h">
@@ -65,13 +83,31 @@
     <ClInclude Include="pg_numericbox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pg_panell.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="pg_button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mouse_listener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboard_listener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_panel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_check_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_radiobox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_combobox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pg_messagebox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,3 +1,8 @@
-﻿  pg_composite.cpp
-e:\visualstudioprojects\methodsinse\pseudographics\pseudographics\pg_composite.cpp(32): error C2664: 'int vprintf(const char *const ,va_list)': cannot convert argument 1 from 'const std::string' to 'const char *const '
-  e:\visualstudioprojects\methodsinse\pseudographics\pseudographics\pg_composite.cpp(32): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+﻿  pg_radiobox.cpp
+  pg_combobox.cpp
+  pg_check_list.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  pg_components_factory.cpp
+  PseudoGraphics.vcxproj -> E:\VisualStudioProjects\MethodsInSE\PseudoGraphics\Debug\PseudoGraphics.exe
+  PseudoGraphics.vcxproj -> E:\VisualStudioProjects\MethodsInSE\PseudoGraphics\Debug\PseudoGraphics.pdb (Partial PDB)

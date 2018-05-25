@@ -8,6 +8,8 @@ class PgButton : public PgComposite
 public:
 	PgButton();
 	~PgButton();
+
+	void draw() {}
 };
 
 #endif // !PG_BUTTON_H

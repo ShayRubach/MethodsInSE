@@ -8,6 +8,8 @@ class PgTextBox : public PgComposite
 public:
 	PgTextBox();
 	~PgTextBox();
+
+	void draw() {}
 };
 
 #endif // !PG_TEXTBOX_H

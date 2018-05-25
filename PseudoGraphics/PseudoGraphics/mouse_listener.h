@@ -6,8 +6,9 @@
 class IMouseListener
 {
 public:
-	IMouseListener();
-	virtual ~IMouseListener();
+	virtual ~IMouseListener() = default;
+	virtual bool onClick() = 0;
+	virtual bool onHover() = 0;
 };
 
 #endif // !IMOUSE_LISTENER_H

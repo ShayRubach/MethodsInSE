@@ -113,26 +113,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="keyboard_listener.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mouse_listener.cpp" />
     <ClCompile Include="pg_button.cpp" />
+    <ClCompile Include="pg_check_list.cpp" />
+    <ClCompile Include="pg_combobox.cpp" />
     <ClCompile Include="pg_component.cpp" />
     <ClCompile Include="pg_components_factory.cpp" />
     <ClCompile Include="pg_composite.cpp" />
     <ClCompile Include="pg_label.cpp" />
+    <ClCompile Include="pg_list.cpp" />
+    <ClCompile Include="pg_messagebox.cpp" />
     <ClCompile Include="pg_numericbox.cpp" />
     <ClCompile Include="pg_panel.cpp" />
+    <ClCompile Include="pg_radiobox.cpp" />
     <ClCompile Include="pg_textbox.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="keyboard_listener.h" />
     <ClInclude Include="mouse_listener.h" />
     <ClInclude Include="pg_button.h" />
+    <ClInclude Include="pg_check_list.h" />
+    <ClInclude Include="pg_combobox.h" />
     <ClInclude Include="pg_component.h" />
     <ClInclude Include="pg_components_factory.h" />
     <ClInclude Include="pg_composite.h" />
     <ClInclude Include="pg_label.h" />
+    <ClInclude Include="pg_list.h" />
+    <ClInclude Include="pg_messagebox.h" />
     <ClInclude Include="pg_numericbox.h" />
-    <ClInclude Include="pg_panell.h" />
+    <ClInclude Include="pg_panel.h" />
+    <ClInclude Include="pg_radiobox.h" />
     <ClInclude Include="pg_textbox.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
