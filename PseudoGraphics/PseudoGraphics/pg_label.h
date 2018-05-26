@@ -5,12 +5,17 @@
 
 class PgLabel : public PgComposite
 {
+	string _content;
+
 public:
 	
-	PgLabel();
+	PgLabel() = default;
+	PgLabel(COORD pos, COORD dim, const string& content);
 	~PgLabel();
 
-	void draw() {}
+	void draw();
+	void setContent(const string& content);
+	string getContent();
 };
 
 

@@ -13,16 +13,16 @@
 
 using namespace std;
 
-enum PgDebugLevel {
+typedef enum  {
 	PG_DBG_INFO,
 	PG_DBG_ERROR
-};
+}PgDebugLevel;
 
-enum PgFrameType {
+typedef enum {
 	NONE,
 	SINGLE_SOLID,
 	DOUBLE_SOLID
-};
+}PgFrameType;
 
 class PgComposite : public PgComponent
 {
@@ -34,13 +34,16 @@ private:
 	COORD _base_pos;
 	PgFrameType _frame_type;
 	vector<PgComponent*> children;
+	static HANDLE _in, _out;
 
 
 public:
+	PgComposite();
 	virtual ~PgComposite() {}
 
 	virtual void draw() = 0;
 	virtual void innerDraw() {}
+	virtual void handleInput() {};
 	
 	void add(PgComponent*);
 	void remove(const int pos);
@@ -58,8 +61,10 @@ public:
 	void setFrameType(PgFrameType frame_type);
 	void setDimensions(COORD dim);
 	void setBasePosition(COORD pos);
+	void setBackground(DWORD);
 	
 };
 
+void debug(PgDebugLevel lvl, const char *format, ...);
 
 #endif // !PG_COMPOSITE_H

@@ -1,5 +1,9 @@
 #include "pg_composite.h"
 
+//init static handles (shared among all components - prohibit multiple handlers):
+HANDLE PgComposite::_in = GetStdHandle(STD_INPUT_HANDLE);
+HANDLE PgComposite::_out = GetStdHandle(STD_OUTPUT_HANDLE);
+
 static bool 
 isValidPos(const int &size, const int &pos) {
 	if (pos < 0 || pos > size) {
@@ -22,7 +26,7 @@ dbgToString(PgDebugLevel lvl) {
 	}
 }
 
-static void
+void
 debug(PgDebugLevel lvl, const char *format, ...) {
 
 	cout << "[" << dbgToString(lvl) << "] ";
@@ -33,6 +37,12 @@ debug(PgDebugLevel lvl, const char *format, ...) {
 	va_end(args);
 }
 
+PgComposite::PgComposite() {
+	const char* fn = __FUNCTION__;
+	if (_in == INVALID_HANDLE_VALUE || _out == INVALID_HANDLE_VALUE) {
+		debug(PG_DBG_ERROR, "one of i/o handles is invalid.", fn);
+	}
+}
 void
 PgComposite::add(PgComponent* new_child) {
 	const char* fn = __FUNCTION__;
