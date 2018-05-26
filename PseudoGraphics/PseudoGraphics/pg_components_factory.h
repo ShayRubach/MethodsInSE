@@ -34,7 +34,7 @@ private:
 
 public:
 	static PgComponentsFactory& getInstance();
-	PgComponent* create(PgProduct product);
+	PgComposite* create(PgProduct product);
 
 };
 

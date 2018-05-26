@@ -10,11 +10,15 @@
 
 int main() {
 
-	PgComponent* label = PgComponentsFactory::getInstance().create(LABEL);
-	//while (true) {
-		//check_list.handleInput();
-		label->draw();
-	//}
+	PgComposite* label = PgComponentsFactory::getInstance().create(LABEL);
+	PgComposite* button = PgComponentsFactory::getInstance().create(BUTTON);
+
+	label->setFrameType(DOUBLE_SOLID);
+	label->draw();
+
+	while (true) {
+
+	}
 
 	return 1;
 }

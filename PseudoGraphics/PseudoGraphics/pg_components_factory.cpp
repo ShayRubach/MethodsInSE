@@ -7,7 +7,7 @@ PgComponentsFactory::getInstance() {
 	return instance;
 }
 
-PgComponent* 
+PgComposite*
 PgComponentsFactory::create(PgProduct product) {
 	switch (product)
 	{

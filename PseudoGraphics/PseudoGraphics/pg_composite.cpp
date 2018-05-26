@@ -29,7 +29,10 @@ dbgToString(PgDebugLevel lvl) {
 void
 debug(PgDebugLevel lvl, const char *format, ...) {
 	ofstream file;
-	file.open("debug.txt");
+	time_t now = time(0);
+	tm *ltm = localtime(&now);
+
+	file.open(DBG_FILE_NAME, std::ios_base::app);
 	char buffer[512] = {0};
 
 
@@ -37,7 +40,10 @@ debug(PgDebugLevel lvl, const char *format, ...) {
 	va_start(args, format);
 	vsprintf(buffer, format, args);
 	
-	file << "[" << dbgToString(lvl) << "] " << buffer;
+	file << "{" << ltm->tm_hour << ":";
+	file << ltm->tm_min << ":";
+	file << ltm->tm_sec << "}";
+	file << " [" << dbgToString(lvl) << "] " << buffer << "\n";
 	va_end(args);
 	file.close();
 }
@@ -49,14 +55,18 @@ PgComposite::PgComposite() :
 	_frame_type(SINGLE_SOLID) {
 	
 	const char* fn = __FUNCTION__;
+	debug(PG_DBG_INFO, "%s: called.", fn);
+
 	if (_in == INVALID_HANDLE_VALUE || _out == INVALID_HANDLE_VALUE) {
-		debug(PG_DBG_ERROR, "one of i/o handles is invalid.", fn);
+		debug(PG_DBG_ERROR, "%s: one of i/o handles is invalid.", fn);
 	}
 	
 }
 
 void
 PgComposite::drawBorder() {
+	const char* fn = __FUNCTION__;
+	debug(PG_DBG_INFO, "%s: called.", fn);
 
 	char top_left, top_right, btm_left, btm_right;
 	char line_horiz, line_vert;
@@ -100,14 +110,25 @@ PgComposite::drawBorder() {
 
 void
 PgComposite::drawLine(char open_sym, char mid_sym, char end_sym) {
+	char* fn = __FUNCTION__;
+	debug(PG_DBG_INFO, "%s: called.", fn);
 
+	for (size_t i = 0; i < _dim.X - 1; i++) {
+		if (i == 0) {
+			cout << open_sym;
+		}
+		else {
+			cout << mid_sym;
+		}
+	}
+	cout << end_sym;
 }
 
 void
 PgComposite::add(PgComponent* new_child) {
 	const char* fn = __FUNCTION__;
-	debug(PG_DBG_INFO, "%s: called.\n", fn);
-	debug(PG_DBG_INFO, "%s: new_child=%d.\n", fn, new_child);
+	debug(PG_DBG_INFO, "%s: called.", fn);
+	debug(PG_DBG_INFO, "%s: new_child=%d.", fn, new_child);
 
 	if (new_child) {
 		children.push_back(new_child);
@@ -120,13 +141,16 @@ PgComposite::add(PgComponent* new_child) {
 void
 PgComposite::remove(const int pos) {
 	const char* fn = __FUNCTION__;
-	debug(PG_DBG_INFO, "%s: called.\n", fn);
-	debug(PG_DBG_INFO, "%s: pos=%d.\n", fn, pos);
+	debug(PG_DBG_INFO, "%s: called.", fn);
+	debug(PG_DBG_INFO, "%s: pos=%d.", fn, pos);
 	
 }
 
 PgComponent* 
 PgComposite::getChild(const int pos) {
+	const char* fn = __FUNCTION__;
+	debug(PG_DBG_INFO, "%s: called.", fn);
+
 	if (isValidPos(children.size(), pos)) {
 		return children.at(pos);
 	}
@@ -196,4 +220,14 @@ PgComposite::setDimensions(COORD dim) {
 void
 PgComposite::setBasePosition(COORD pos) {
 	_base_pos = pos;
+}
+
+DWORD
+PgComposite::getBackgroundColor() {
+	return _bg_color;
+}
+
+void 
+PgComposite::setBackground(DWORD bg_color) {
+	_bg_color = bg_color;
 }

@@ -34,10 +34,12 @@
 #define PROMPT_OFFSET (36)
 
 //default gui values
-#define POS_DEF_X (10)
-#define POS_DEF_Y (10)
-#define DIM_DEF_W (10)
-#define DIM_DEF_H (10)
+#define POS_DEF_X (5)
+#define POS_DEF_Y (5)
+#define DIM_DEF_W (5)
+#define DIM_DEF_H (5)
+
+#define DBG_FILE_NAME "debug.txt"
 
 
 

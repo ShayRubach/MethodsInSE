@@ -8,6 +8,7 @@
 #include <Windows.h>
 #include <vector>
 #include <iostream>
+#include <ctime>
 
 #define PG_INFO			"INFO";
 #define PG_ERR			"ERROR";
@@ -35,6 +36,7 @@ protected:
 	bool _visible;
 	COORD _dim;
 	COORD _base_pos;
+	DWORD _bg_color;
 	PgFrameType _frame_type;
 	vector<PgComponent*> children;
 	static HANDLE _in, _out;
@@ -54,6 +56,7 @@ public:
 	vector<PgComponent*> getChildren();
 	COORD getDimensions();
 	COORD getBasePosition();
+	DWORD getBackgroundColor();
 	PgFrameType getFrameType();
 	bool isTabbable();
 	bool isClickable();
