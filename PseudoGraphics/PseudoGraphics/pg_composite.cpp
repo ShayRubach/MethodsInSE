@@ -109,6 +109,13 @@ PgComposite::drawBorder() {
 }
 
 void
+PgComposite::drawChildren() {
+	for each (PgComponent* child in children) {
+		child->draw();
+	}
+}
+
+void
 PgComposite::drawLine(char open_sym, char mid_sym, char end_sym) {
 	char* fn = __FUNCTION__;
 	debug(PG_DBG_INFO, "%s: called.", fn);
@@ -125,17 +132,32 @@ PgComposite::drawLine(char open_sym, char mid_sym, char end_sym) {
 }
 
 void
+PgComposite::add(PgComponent* new_child, bool tabbable, bool clickable) {
+	static_cast<PgComposite*>(new_child)->setTabbable(tabbable);
+	static_cast<PgComposite*>(new_child)->setClickable(clickable);
+	add(new_child);
+}
+
+void
 PgComposite::add(PgComponent* new_child) {
 	const char* fn = __FUNCTION__;
 	debug(PG_DBG_INFO, "%s: called.", fn);
 	debug(PG_DBG_INFO, "%s: new_child=%d.", fn, new_child);
 
 	if (new_child) {
+
+		//fix child position in relation to this parent:
+		//we need to cast to Compsite in order to access the getter.
+		short new_pos_x = _base_pos.X + static_cast<PgComposite*>(new_child)->_base_pos.X;
+		short new_pos_y = _base_pos.Y + static_cast<PgComposite*>(new_child)->_base_pos.Y;
+		static_cast<PgComposite*>(new_child)->setBasePosition({ new_pos_x, new_pos_y });
+	
 		children.push_back(new_child);
 	}
 	else {
 			debug(PG_DBG_INFO, "%s: new_child is null.", fn);
 	}
+	
 }
 
 void
@@ -156,6 +178,29 @@ PgComposite::getChild(const int pos) {
 	}
 	return NULL;
 }
+
+COORD
+PgComposite::GetConsoleCursorPosition(HANDLE h_out) {
+	CONSOLE_SCREEN_BUFFER_INFO cbsi;
+	if (GetConsoleScreenBufferInfo(h_out, &cbsi)) {
+		return cbsi.dwCursorPosition;
+	}
+	else {
+		// The function failed. Call GetLastError() for details.
+		return{ 0, 0 };
+	}
+}
+
+PgComposite::~PgComposite() {
+	const char* fn = __FUNCTION__;
+	debug(PG_DBG_INFO, "%s: called.", fn);
+	for each (PgComponent* child in children) {
+		if (child) {
+			delete child;
+		}
+	}
+}
+
 
 vector<PgComponent*> 
 PgComposite::getChildren() {
@@ -228,6 +273,7 @@ PgComposite::getBackgroundColor() {
 }
 
 void 
-PgComposite::setBackground(DWORD bg_color) {
-	_bg_color = bg_color;
+PgComposite::setBackground(DWORD bg) {
+	_bg_color = bg;
+	SetConsoleTextAttribute(_out, bg);
 }

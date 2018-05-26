@@ -9,6 +9,7 @@
 #include <vector>
 #include <iostream>
 #include <ctime>
+#include <memory>
 
 #define PG_INFO			"INFO";
 #define PG_ERR			"ERROR";
@@ -43,14 +44,17 @@ protected:
 
 public:
 	PgComposite();
-	virtual ~PgComposite() {}
+	virtual ~PgComposite();
 
 	virtual void draw() = 0;
 	virtual void drawBorder();
+	virtual void drawChildren();
 	virtual void drawLine(char, char, char);
 	virtual void handleInput() {};
 	
 	void add(PgComponent*);
+	void add(PgComponent*,bool,bool);
+
 	void remove(const int pos);
 	PgComponent* getChild(const int pos);
 	vector<PgComponent*> getChildren();
@@ -68,6 +72,8 @@ public:
 	void setDimensions(COORD dim);
 	void setBasePosition(COORD pos);
 	void setBackground(DWORD);
+
+	static COORD GetConsoleCursorPosition(HANDLE h_out);
 	
 };
 

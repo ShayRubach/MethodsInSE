@@ -14,6 +14,7 @@ public:
 	~PgLabel();
 
 	void draw();
+	void drawContent(string& _content);
 	void setContent(const string& content);
 	string getContent();
 };

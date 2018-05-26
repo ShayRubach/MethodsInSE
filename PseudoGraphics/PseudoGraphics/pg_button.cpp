@@ -1,12 +1,17 @@
 #include "pg_button.h"
 
 
-
-PgButton::PgButton()
-{
+PgButton::PgButton(PgLabel* label) {
+	if (label) {
+		add(label);
+	}
 }
 
+void
+PgButton::draw() {
 
-PgButton::~PgButton()
-{
+	if (_visible) {
+		PgComposite::drawBorder();
+		drawChildren();
+	}
 }
