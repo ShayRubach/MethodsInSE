@@ -58,10 +58,7 @@ PgLabel::setContent(const string& content) {
 	}
 	else {
 		debug(PG_DBG_INFO, "%s: content string is empty.", fn);
-	}
-
-	this->draw();
-	
+	}	
 }
 
 string

@@ -75,10 +75,10 @@ PgComposite::drawBorder() {
 	SetConsoleCursorPosition(_out, _base_pos);
 
 	if (_frame_type == NONE) {
-		for (int i = 0; i < this->_dim.X; ++i) {
+		for (int i = 0; i < this->_dim.Y; ++i) {
 			//draw empty lines as border
 			drawLine(SPACE, SPACE, SPACE);
-			SetConsoleCursorPosition(_out, { _base_pos.X,_base_pos.Y +	(short)i });
+			SetConsoleCursorPosition(_out, { _base_pos.X,_base_pos.Y +	(short)i + 1 });
 		}
 		return;
 	}
@@ -95,7 +95,7 @@ PgComposite::drawBorder() {
 	drawLine(top_left, line_horiz, top_right);
 	SetConsoleCursorPosition(_out, { _base_pos.X,_base_pos.Y + 1 });
 
-	for (size_t i = 0; i < _dim.Y; i++) {
+	for (size_t i = 0; i < _dim.Y-2; i++) {
 		drawLine(line_vert, SPACE, line_vert);
 		SetConsoleCursorPosition(_out, { _base_pos.X,_base_pos.Y + 2 + ((short)i) });
 	}
@@ -259,7 +259,12 @@ PgComposite::setFrameType(PgFrameType frame_type) {
 
 void
 PgComposite::setDimensions(COORD dim) {
+	if (dim.X < MIN_DIM_X)
+		dim.X = 3;
+	if (dim.Y < MIN_DIM_Y)
+		dim.Y = 3;
 	_dim = dim;
+
 }
 
 void

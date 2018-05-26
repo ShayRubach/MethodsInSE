@@ -8,8 +8,8 @@ int main() {
 	PgComponentsFactory& factory = PgComponentsFactory::getInstance();
 
 	PgComposite* panel = factory.create(PANEL);
-	PgComposite* label1 = factory.create(LABEL);
-	PgComposite* label2 = factory.create(LABEL);
+	PgComposite* label = factory.create(LABEL);
+	
 	PgComposite* button = factory.create(BUTTON);
 
 	panel->setFrameType(DOUBLE_SOLID);
@@ -18,28 +18,18 @@ int main() {
 	panel->setBasePosition({ 1, 1 });
 	panel->draw();
 	
-
-
 	//PgLabel example
-	label1->setFrameType(DOUBLE_SOLID);
-	label1->setBackground(APP_RGB);
-	label1->setDimensions({ 10, 10 });
-	label1->setBasePosition({ 10, 10 });
-	static_cast<PgLabel*>(label1)->setContent("I'M PICKLE RIIIIIIIIIIIIIIIIIIIIIIIIIIIICK");
-
-	
-	//PgLabel example
-	label2->setFrameType(NONE);
-	label2->setBackground(APP_RGB);
-	label2->setDimensions({ 10, 10 });
-	label2->setBasePosition({ 10, 10 });
-	static_cast<PgLabel*>(label2)->setContent("PRESS ME");
+	label->setFrameType(NONE);
+	label->setBackground(APP_RGB);
+	label->setDimensions({ 0, 30 });
+	label->setBasePosition({ 30, 5 });
+	static_cast<PgLabel*>(label)->setContent("I'M PICKLE RIIIIIIIIICK");
+	label->draw();
 
 	button->setFrameType(SINGLE_SOLID);
-	button->setBackground(10|20|30);
+	button->setDimensions({ 10, 3 });
 	button->setBasePosition({10,10});
-	button->setDimensions({ 20, 20 });
-	button->add(label2);
+	static_cast<PgButton*>(button)->setButtonName("Click Me");
 	button->draw();
 
 	

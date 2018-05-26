@@ -5,11 +5,15 @@
 
 class PgButton : public PgComposite
 {
+	string _btn_name;
+
 public:
 	PgButton() = default;
 	PgButton(PgLabel* label);
-	PgButton(const string& label);
 	~PgButton() = default;
+	void setButtonName(const string& btn_name);
+	string getButtonName();
+
 
 	void draw();
 };

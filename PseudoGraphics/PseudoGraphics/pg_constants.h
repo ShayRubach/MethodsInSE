@@ -38,6 +38,9 @@
 #define POS_DEF_Y (5)
 #define DIM_DEF_W (5)
 #define DIM_DEF_H (5)
+#define MIN_DIM_X (3)
+#define MIN_DIM_Y (3)
+
 
 #define DBG_FILE_NAME "debug.txt"
 
