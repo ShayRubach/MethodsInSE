@@ -8,7 +8,7 @@ PgComponentsFactory::getInstance() {
 }
 
 PgComponent* 
-PgComponentsFactory::create(const enum PgProduct& product) {
+PgComponentsFactory::create(PgProduct product) {
 	switch (product)
 	{
 	case LABEL:

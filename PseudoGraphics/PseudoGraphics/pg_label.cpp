@@ -13,6 +13,10 @@ PgLabel::PgLabel(COORD pos, COORD dim, const string& content) : PgComposite() {
 
 void
 PgLabel::draw() {
+	const char* fn = __FUNCTION__;
+	debug(PG_DBG_INFO, "%s: called.", fn);
+
+	drawBorder();
 
 }
 
@@ -24,7 +28,7 @@ PgLabel::setContent(const string& content) {
 		_content = content;
 	}
 	else {
-		debug(PG_DBG_ERROR, "%s: content string is empty.\n", fn);
+		debug(PG_DBG_INFO, "%s: content string is empty.\n", fn);
 	}
 	
 }

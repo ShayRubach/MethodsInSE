@@ -3,6 +3,8 @@
 #define PG_COMPOSITE_H
 
 #include "pg_component.h"
+#include "pg_constants.h"
+#include <fstream>
 #include <Windows.h>
 #include <vector>
 #include <iostream>
@@ -26,7 +28,8 @@ typedef enum {
 
 class PgComposite : public PgComponent
 {
-private:
+
+protected:
 	bool _tabbable;
 	bool _clickable;
 	bool _visible;
@@ -36,13 +39,13 @@ private:
 	vector<PgComponent*> children;
 	static HANDLE _in, _out;
 
-
 public:
 	PgComposite();
 	virtual ~PgComposite() {}
 
 	virtual void draw() = 0;
-	virtual void innerDraw() {}
+	virtual void drawBorder();
+	virtual void drawLine(char, char, char);
 	virtual void handleInput() {};
 	
 	void add(PgComponent*);

@@ -13,12 +13,12 @@
 #define SINGLE_LINE_VERTICAL '\xB3'
 #define SINGLE_LINE_HORIZONTAL '\xC4'
 //double line
-#define DASHED_TOP_LEFT_CORNER '\xC9'
-#define DASHED_TOP_RIGHT_CORNER '\xBB'
-#define DASHED_BTM_LEFT_CORNER '\xC8'
-#define DASHED_BTM_RIGHT_CORNER '\xBC'
-#define DASHED_LINE_VERTICAL '\xBA'
-#define DASHED_LINE_HORIZONTAL '\xCD'
+#define DOUBLE_TOP_LEFT_CORNER '\xC9'
+#define DOUBLE_TOP_RIGHT_CORNER '\xBB'
+#define DOUBLE_BTM_LEFT_CORNER '\xC8'
+#define DOUBLE_BTM_RIGHT_CORNER '\xBC'
+#define DOUBLE_LINE_VERTICAL '\xBA'
+#define DOUBLE_LINE_HORIZONTAL '\xCD'
 
 #define BACKSPACE '\x08'
 #define SPACE '\x20'
@@ -32,6 +32,12 @@
 #define SYM_CHOICE '*'
 #define SYM_CHOICE_OFFSET (3)
 #define PROMPT_OFFSET (36)
+
+//default gui values
+#define POS_DEF_X (10)
+#define POS_DEF_Y (10)
+#define DIM_DEF_W (10)
+#define DIM_DEF_H (10)
 
 
 

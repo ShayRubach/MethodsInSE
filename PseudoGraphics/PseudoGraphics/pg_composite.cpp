@@ -28,21 +28,81 @@ dbgToString(PgDebugLevel lvl) {
 
 void
 debug(PgDebugLevel lvl, const char *format, ...) {
+	ofstream file;
+	file.open("debug.txt");
+	char buffer[512] = {0};
 
-	cout << "[" << dbgToString(lvl) << "] ";
 
 	va_list args;
 	va_start(args, format);
-	vprintf(format, args);
+	vsprintf(buffer, format, args);
+	
+	file << "[" << dbgToString(lvl) << "] " << buffer;
 	va_end(args);
+	file.close();
 }
 
-PgComposite::PgComposite() {
+//init member variables with def values
+PgComposite::PgComposite() : 
+	_tabbable(false), _clickable(false), _visible(true),
+	_dim({DIM_DEF_W,DIM_DEF_H}), _base_pos({POS_DEF_X,POS_DEF_X }),
+	_frame_type(SINGLE_SOLID) {
+	
 	const char* fn = __FUNCTION__;
 	if (_in == INVALID_HANDLE_VALUE || _out == INVALID_HANDLE_VALUE) {
 		debug(PG_DBG_ERROR, "one of i/o handles is invalid.", fn);
 	}
+	
 }
+
+void
+PgComposite::drawBorder() {
+
+	char top_left, top_right, btm_left, btm_right;
+	char line_horiz, line_vert;
+
+	//reset our cursor pos to base pos
+	SetConsoleCursorPosition(_out, _base_pos);
+
+	if (_frame_type == NONE) {
+		for (int i = 0; i < this->_dim.X; ++i) {
+			//draw empty lines as border
+			drawLine(SPACE, SPACE, SPACE);
+			SetConsoleCursorPosition(_out, { _base_pos.X,_base_pos.Y +	(short)i });
+		}
+		return;
+	}
+
+	//handle the single | double scenario:
+	top_left   = (_frame_type == SINGLE_SOLID ? SINGLE_TOP_LEFT_CORNER  : DOUBLE_TOP_LEFT_CORNER );
+	top_right  = (_frame_type == SINGLE_SOLID ? SINGLE_TOP_RIGHT_CORNER : DOUBLE_TOP_RIGHT_CORNER);
+	btm_left   = (_frame_type == SINGLE_SOLID ? SINGLE_BTM_LEFT_CORNER  : DOUBLE_BTM_LEFT_CORNER);
+	btm_right  = (_frame_type == SINGLE_SOLID ? SINGLE_BTM_RIGHT_CORNER : DOUBLE_BTM_RIGHT_CORNER);
+	line_horiz = (_frame_type == SINGLE_SOLID ? SINGLE_LINE_HORIZONTAL  : DOUBLE_LINE_HORIZONTAL);
+	line_vert  = (_frame_type == SINGLE_SOLID ? SINGLE_LINE_VERTICAL    : DOUBLE_LINE_VERTICAL);
+
+	
+	drawLine(top_left, line_horiz, top_right);
+	SetConsoleCursorPosition(_out, { _base_pos.X,_base_pos.Y + 1 });
+
+	for (size_t i = 0; i < _dim.Y; i++) {
+		drawLine(line_vert, SPACE, line_vert);
+		SetConsoleCursorPosition(_out, { _base_pos.X,_base_pos.Y + 2 + ((short)i) });
+	}
+
+		drawLine(btm_left, line_horiz, btm_right);
+		SetConsoleCursorPosition(_out, { _base_pos.X + 1,_base_pos.Y + 1 });
+	
+
+	//reset our cursor pos to base pos again
+	SetConsoleCursorPosition(_out, _base_pos);
+}
+
+void
+PgComposite::drawLine(char open_sym, char mid_sym, char end_sym) {
+
+}
+
 void
 PgComposite::add(PgComponent* new_child) {
 	const char* fn = __FUNCTION__;

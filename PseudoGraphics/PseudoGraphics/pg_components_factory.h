@@ -33,8 +33,8 @@ private:
 	PgComponentsFactory& operator=(const PgComponentsFactory&) = delete;
 
 public:
-	PgComponentsFactory& getInstance();
-	PgComponent* create(const enum PgProduct& product);
+	static PgComponentsFactory& getInstance();
+	PgComponent* create(PgProduct product);
 
 };
 
