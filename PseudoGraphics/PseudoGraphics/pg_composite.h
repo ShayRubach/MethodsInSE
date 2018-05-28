@@ -41,6 +41,7 @@ protected:
 	PgFrameType _frame_type;
 	vector<PgComponent*> children;
 	HANDLE _in, _out;
+	CONSOLE_CURSOR_INFO _cursor_info;
 
 public:
 	PgComposite();
@@ -60,6 +61,7 @@ public:
 	vector<PgComponent*> getChildren();
 	COORD getDimensions();
 	COORD getBasePosition();
+	COORD GetConsoleCursorPosition(HANDLE h_out);
 	DWORD getBackgroundColor();
 	PgFrameType getFrameType();
 	bool isTabbable();
@@ -72,8 +74,7 @@ public:
 	void setDimensions(COORD dim);
 	void setBasePosition(COORD pos);
 	void setBackground(DWORD);
-
-	static COORD GetConsoleCursorPosition(HANDLE h_out);
+	void setCursorAttributes(DWORD size, BOOL visible);
 	
 };
 

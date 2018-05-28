@@ -58,7 +58,18 @@ PgComposite::PgComposite() :
 	if (_in == INVALID_HANDLE_VALUE || _out == INVALID_HANDLE_VALUE) {
 		debug(PG_DBG_ERROR, "%s: one of i/o handles is invalid.", fn);
 	}
+
+	//hide cursor by default:
+	setCursorAttributes(DEFAULT_CURSOR_SIZE, FALSE);
 	
+}
+
+void
+PgComposite::setCursorAttributes(DWORD size, BOOL visible) {
+	GetConsoleCursorInfo(_out, &_cursor_info);
+	_cursor_info.dwSize = size;
+	_cursor_info.bVisible = visible;
+	SetConsoleCursorInfo(_out, &_cursor_info);
 }
 
 void

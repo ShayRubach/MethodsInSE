@@ -28,8 +28,10 @@ string PgButton::getButtonName() {
 
 void
 PgButton::draw() {
+
 	if (_visible) {
 		PgComposite::drawBorder();
 		drawChildren();
 	}
+
 }

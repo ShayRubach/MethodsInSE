@@ -41,6 +41,7 @@
 #define MIN_DIM_X (3)
 #define MIN_DIM_Y (3)
 
+#define DEFAULT_CURSOR_SIZE (50)
 
 #define DBG_FILE_NAME "debug.txt"
 

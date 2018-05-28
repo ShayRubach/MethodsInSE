@@ -38,14 +38,17 @@ int main() {
 		remove(DBG_FILE_NAME);
 	}
 
-	int x;
-	cin >> x;
+
+
+
+
 
 	if (panel) {
 		delete panel;
 	}
-	
 
+	int x;
+	cin >> x;
 
 	return 1;
 }
