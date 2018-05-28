@@ -1,9 +1,5 @@
 #include "pg_composite.h"
 
-//init static handles (shared among all components - prohibit multiple handlers):
-HANDLE PgComposite::_in = GetStdHandle(STD_INPUT_HANDLE);
-HANDLE PgComposite::_out = GetStdHandle(STD_OUTPUT_HANDLE);
-
 static bool 
 isValidPos(const int &size, const int &pos) {
 	if (pos < 0 || pos > size) {
@@ -52,7 +48,9 @@ debug(PgDebugLevel lvl, const char *format, ...) {
 PgComposite::PgComposite() : 
 	_tabbable(false), _clickable(false), _visible(true),
 	_dim({DIM_DEF_W,DIM_DEF_H}), _base_pos({POS_DEF_X,POS_DEF_X }),
-	_frame_type(SINGLE_SOLID) {
+	_frame_type(SINGLE_SOLID), 
+	_in (GetStdHandle(STD_INPUT_HANDLE)), 
+	_out(GetStdHandle(STD_OUTPUT_HANDLE)) {
 	
 	const char* fn = __FUNCTION__;
 	debug(PG_DBG_INFO, "%s: called.", fn);

@@ -21,12 +21,13 @@ int main() {
 	//PgLabel example
 	label->setFrameType(NONE);
 	label->setBackground(APP_RGB);
-	label->setDimensions({ 0, 30 });
+	label->setDimensions({ 30, 3 });
 	label->setBasePosition({ 30, 5 });
 	static_cast<PgLabel*>(label)->setContent("I'M PICKLE RIIIIIIIIICK");
 	label->draw();
 
 	button->setFrameType(SINGLE_SOLID);
+	button->setBackground(100|20|200);
 	button->setDimensions({ 10, 3 });
 	button->setBasePosition({10,10});
 	static_cast<PgButton*>(button)->setButtonName("Click Me");

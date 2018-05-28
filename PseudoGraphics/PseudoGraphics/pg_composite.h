@@ -40,7 +40,7 @@ protected:
 	DWORD _bg_color;
 	PgFrameType _frame_type;
 	vector<PgComponent*> children;
-	static HANDLE _in, _out;
+	HANDLE _in, _out;
 
 public:
 	PgComposite();
