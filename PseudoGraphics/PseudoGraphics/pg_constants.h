@@ -40,8 +40,13 @@
 #define DIM_DEF_H (5)
 #define MIN_DIM_X (3)
 #define MIN_DIM_Y (3)
-
 #define DEFAULT_CURSOR_SIZE (50)
+
+//default component colors:
+#define DEF_PANEL_COLOR (5)
+#define DEF_LABEL_COLOR (90|10|30)
+#define DEF_BTN_COLOR		(100|20|200)
+
 
 #define DBG_FILE_NAME "debug.txt"
 

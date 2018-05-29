@@ -154,7 +154,6 @@ PgComposite::add(PgComponent* new_child) {
 	debug(PG_DBG_INFO, "%s: new_child=%d.", fn, new_child);
 
 	if (new_child) {
-
 		//fix child position in relation to this parent:
 		//we need to cast to Compsite in order to access the getter.
 		short new_pos_x = _base_pos.X + static_cast<PgComposite*>(new_child)->_base_pos.X;
@@ -269,16 +268,29 @@ PgComposite::setFrameType(PgFrameType frame_type) {
 void
 PgComposite::setDimensions(COORD dim) {
 	if (dim.X < MIN_DIM_X)
-		dim.X = 3;
+		dim.X = MIN_DIM_X;
 	if (dim.Y < MIN_DIM_Y)
-		dim.Y = 3;
+		dim.Y = MIN_DIM_Y;
 	_dim = dim;
 
 }
 
 void
 PgComposite::setBasePosition(COORD pos) {
-	_base_pos = pos;
+	
+	short child_base_x, child_base_y;
+	short diff_x = abs(pos.X - _base_pos.X);
+	short diff_y = abs(pos.Y - _base_pos.Y);
+
+	_base_pos.X = pos.X;
+	_base_pos.Y = pos.Y;
+
+	for each (PgComponent* child in children) {
+		child_base_x = static_cast<PgComposite*>(child)->getBasePosition().X;
+		child_base_y = static_cast<PgComposite*>(child)->getBasePosition().Y;
+
+		static_cast<PgComposite*>(child)->setBasePosition({ diff_x + child_base_x, diff_y + child_base_y });
+	}
 }
 
 DWORD

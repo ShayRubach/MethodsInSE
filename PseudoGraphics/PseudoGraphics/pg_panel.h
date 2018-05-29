@@ -9,7 +9,8 @@ public:
 	PgPanel();
 	~PgPanel();
 
-	void draw() {}
+	void draw();
+
 };
 
 #endif //PG_PANEL_H

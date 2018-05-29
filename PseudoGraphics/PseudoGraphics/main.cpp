@@ -1,6 +1,6 @@
 #include "pg_components_factory.h"
 
-#define APP_RGB (90|10|30)
+
 #define DEBUG_ON		(1)
 
 int main() {
@@ -9,39 +9,44 @@ int main() {
 
 	PgComposite* panel = factory.create(PANEL);
 	PgComposite* label = factory.create(LABEL);
-	
 	PgComposite* button = factory.create(BUTTON);
-
+	
+	//create our main panel and bind all components to it:
+	//PgPanel example:
 	panel->setFrameType(DOUBLE_SOLID);
-	panel->setBackground(50|50|50);
-	panel->setDimensions({ 30, 30 });
-	panel->setBasePosition({ 1, 1 });
-	panel->draw();
+	panel->setBackground(DEF_PANEL_COLOR);
+	panel->setDimensions({ 70, 80 });
+	panel->setBasePosition({2, 2});
+
 	
 	//PgLabel example
 	label->setFrameType(NONE);
-	label->setBackground(APP_RGB);
+	label->setBackground(DEF_LABEL_COLOR);
 	label->setDimensions({ 30, 3 });
 	label->setBasePosition({ 30, 5 });
 	static_cast<PgLabel*>(label)->setContent("I'M PICKLE RIIIIIIIIICK");
-	label->draw();
+	panel->add(label);
+	//label->draw();
 
 	button->setFrameType(SINGLE_SOLID);
-	button->setBackground(100|20|200);
-	button->setDimensions({ 10, 3 });
+	button->setBackground(DEF_BTN_COLOR);
+	button->setDimensions({ 20, 6 });
 	button->setBasePosition({10,10});
 	static_cast<PgButton*>(button)->setButtonName("Click Me");
-	button->draw();
+	panel->add(button);
+	//button->draw();
 
 	
+
+
+
+
+	panel->draw();
+
+
 	if (!DEBUG_ON) {
 		remove(DBG_FILE_NAME);
 	}
-
-
-
-
-
 
 	if (panel) {
 		delete panel;

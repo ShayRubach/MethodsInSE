@@ -13,10 +13,11 @@ PgButton::setButtonName(const string& btn_name) {
 		_btn_name = btn_name;
 		PgComposite* label = new PgLabel();
 		label->setBasePosition({ 0,0 });
-		label->setDimensions(getDimensions());
+		label->setDimensions({ getDimensions() });
 		label->setClickable(true);
-		label->setTabbable(true);
+		label->setTabbable(false);
 		label->setVisible(true);
+		label->setFrameType(getFrameType());
 		static_cast<PgLabel*>(label)->setContent(_btn_name);
 		add(label);
 	}
