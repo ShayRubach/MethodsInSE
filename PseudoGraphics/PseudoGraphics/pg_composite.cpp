@@ -273,7 +273,6 @@ PgComposite::setDimensions(COORD dim) {
 		dim.Y = MIN_DIM_Y;
 	_dim = dim;
 
-
 }
 
 void
